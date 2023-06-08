@@ -1,0 +1,90 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+:root {
+  --background-color: #fcfcff;
+  --text-color: #413d3d;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('./assets/Helvetica-Neue-Font/Helvetica-Neue-Font/Helvetica Neue Medium Extended/Helvetica Neue Medium Extended.otf'), format('otf');
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+body.dark {
+  --background-color: #161538;
+  --text-color: #fafafa;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #141253;
+  font-weight: 400;
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, h5, h6 {
+  color: #ffcc00;
+}
+
+.dark .content {
+  background-color: #161538;
+}
+
+p {
+  color: #161538;
+}
+
+.dark p {
+  color: #adadad;
+}
+
+.dark a {
+  color: #03ffea;
+}
+
+.dark .sidebar {
+  background-color: #0d0c29;
+}
+
+
+a {
+  font-weight: 500;
+  color: #272da0;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

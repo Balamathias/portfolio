@@ -1,0 +1,19 @@
+.layout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+/* @media only screen and (max-width:789px) {
+    .layout {
+        flex-direction: column;
+    }
+} */
+
+.content {
+    flex: 1;
+    padding: 20px 30px 20px 10px;
+    width: 100%;
+    height: 100%;
+  }
