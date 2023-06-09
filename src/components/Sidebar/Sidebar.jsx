@@ -1,14 +1,13 @@
-import { Link, useHref } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import './Sidebar.css'
-import { FaAddressBook, FaFacebook, FaHome, FaInfoCircle, FaInstagram, FaLinkedin, FaMoon, FaSun, FaTwitter, FaWhatsapp } from 'react-icons/fa';
-
+import { FaAddressBook, FaFacebook, FaHome, FaInfoCircle, FaInstagram, FaLightbulb, FaLinkedin, FaMoon, FaSun, FaTwitter, FaWhatsapp } from 'react-icons/fa';
 
 
 const Sidebar = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const [isActive, setIsActive] = useState(false);
 
+  const location = useLocation()
 
   useEffect(() => {
     if (isDarkMode) {
@@ -22,18 +21,10 @@ const Sidebar = () => {
     setIsDarkMode(prevMode => !prevMode);
   }
 
-  function markActive(e) {
-    setIsActive(prev => !prev)
-    if (isActive) {
-        e.target.classList.add('active')
-    } else {
-        e.target.classList.remove('active')
-    }
-}
-
   return (
     <div className="sidebar">
       <div className="top-logo-menu">
+        {/* <span className="sm-bars"><FaBars /></span> */}
         <span><Link to='/'>Matie</Link></span>
         <button onClick={toggleDarkMode}>
             {isDarkMode ? <FaSun />: <FaMoon />}
@@ -41,39 +32,45 @@ const Sidebar = () => {
       </div>
       <ul className='sidebar-links'>
         <li className='sidebar-list'>
-          <Link to="/" onClick={markActive}>
+          <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
             <FaHome />
             <span>Home</span>
         </Link>
         </li>
         <li>
-          <Link to="/about" onClick={markActive}>
+          <Link to="/about" className={location.pathname === '/about' ? 'active': ''}>
             <FaInfoCircle />
             <span>About</span>
           </Link>
         </li>
         <li>
-          <Link to="/contact" onClick={markActive}>
+          <Link to="/contact" className={location.pathname === '/contact' ? 'active': ''}>
             <FaAddressBook />
             <span>Contact</span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/skills" className={location.pathname === '/skills' ? 'active': ''}>
+            <FaLightbulb />
+            <span>Skills</span>
           </Link>
         </li>
       </ul>
       <ul className="social-links">
         <li>
-            <a href="#"><FaFacebook /></a>
+            <a href="https://facebook.com/"><FaFacebook /></a>
         </li>
         <li>
-            <a href="#"><FaTwitter /></a>
+            <a href="https://twitter.com/"><FaTwitter /></a>
         </li>
         <li>
-            <a href="#"><FaWhatsapp /></a>
+            <a href="https://whatsapp.com/"><FaWhatsapp /></a>
         </li>
         <li>
-            <a href="#"><FaLinkedin /></a>
+            <a href="https://linkedin.com/"><FaLinkedin /></a>
         </li>
         <li>
-            <a href="#"><FaInstagram /></a>
+            <a href="https://instagram.com/"><FaInstagram /></a>
         </li>
       </ul>
     </div>

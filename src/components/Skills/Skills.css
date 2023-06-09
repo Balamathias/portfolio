@@ -1,0 +1,102 @@
+.skills-page {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    margin-bottom: 50px;
+}
+
+.tools {
+    padding: 20px 0;
+}
+
+.tools-list {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.tools-list li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    width: 100px;
+    border-radius: 4px;
+    color: white;
+    box-shadow: 2px 4px 4px rgba(0,0,0,.23);
+    padding: 15px;
+    background-color: rgb(53, 53, 75);
+}
+
+.tools-list li:hover {
+    background-color: rgb(92, 95, 97);
+    transition: 1s;
+    will-change: contents;
+}
+
+.python {
+    color: yellowgreen !important;
+}
+.js {
+    color: #fc0 !important;
+}
+.git {
+    color: rgb(0, 255, 13) !important;
+}
+.django {
+    color: rgb(4, 218, 75) !important;
+    text-align: center;
+}
+.sql {
+    color: rgb(255, 136, 0) !important;
+}
+.react {
+    color: rgb(0, 162, 255) !important;
+}
+
+
+.dark .tools-list li {
+}
+.tools-list li span {
+    font-size: 14px;
+}
+
+/* projects */
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 25px 0;
+    margin-bottom: 25px;
+}
+
+.project {
+    max-width: 400px;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: rgb(215, 215, 219);
+}
+
+.dark .project {
+    background-color: rgb(24, 24, 71);
+}
+
+.project p:hover {
+    color: blue;
+}
+
+.dark .project p:hover {
+    color: #fc0;
+}
+
+.project img {
+    width: 100%;
+    border-radius: 4px;
+    height: auto;
+    object-fit: cover;
+}

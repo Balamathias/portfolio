@@ -15,6 +15,22 @@
     align-items: center;
   }
 
+  .top-logo-menu .sm-bars {
+    color: #fc0;
+    font-size: 20px;
+    display: none;
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width:600px) {
+    .top-logo-menu .sm-bars {
+      display: block;
+    }
+    .sidebar {
+      width: 20px;
+    }
+  }
+
   .top-logo-menu span a {
     font-family: cursive;
     color: rgb(27, 13, 158);
@@ -24,6 +40,7 @@
   }
   .top-logo-menu button {
     font-family: cursive;
+    cursor: pointer;
     border: none;
     color: rgb(190, 137, 23);
     font-size: 20px;
@@ -52,11 +69,18 @@
     flex-direction: column;
   }
   
- .sidebar a.active {
+.sidebar a.active {
+    font-weight: bold;
+    color: #070063;
+  }
+  
+ .dark .sidebar a.active {
     font-weight: bold;
     color: #ffcc00;
   }
   
   .social-links a {
-    opacity: 0.8;
+    opacity: 0.7;
+    font-size: 14px;
   }
+
