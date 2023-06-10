@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react';
 import './Contact.css'
 import { useSpring, animated, config } from 'react-spring';
 import Loader from '../Loader/Loader';
+import { FaCheck } from 'react-icons/fa';
 // import MapComponent from '../Map/MapComponent';
 
 const Contact = () => {
-
-  // const [message, setMessage] = useState(null)
+  
   const [loader, setLoader] = useState(true)
+  const [message, setMessage] = useState('null')
+  const [showModal, setShowModal] = useState(false);
 
   const introAnimation = useSpring({
     from: { opacity: 0, transform: "translateY(-50px)" },
@@ -46,7 +48,8 @@ const Contact = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        alert(data.message);
+        setMessage(data.message);
+        setShowModal(true);
         setFormData({
           fname: '',
           lname: '',
@@ -79,9 +82,16 @@ const Contact = () => {
           </form>
         </div>
       </animated.div>
-      {/* <div className="message">
-        <p>{message ? message.message : ''}</p>
-      </div> */}
+      {showModal && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={() => setShowModal(false)}>
+              &times;
+            </span>
+            <p className='message'>{message ? message : ''} <FaCheck color='green' /></p>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
