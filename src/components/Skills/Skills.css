@@ -46,6 +46,7 @@
 }
 .git {
     color: rgb(0, 255, 13) !important;
+    text-align: center;
 }
 .django {
     color: rgb(4, 218, 75) !important;

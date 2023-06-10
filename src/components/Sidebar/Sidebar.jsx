@@ -58,19 +58,19 @@ const Sidebar = () => {
       </ul>
       <ul className="social-links">
         <li>
-            <a href="https://facebook.com/"><FaFacebook /></a>
+            <a href="https://web.facebook.com/profile.php?id=100073482507197"><FaFacebook /></a>
         </li>
         <li>
-            <a href="https://twitter.com/"><FaTwitter /></a>
+            <a href="https://twitter.com/matty__02"><FaTwitter /></a>
         </li>
         <li>
-            <a href="https://whatsapp.com/"><FaWhatsapp /></a>
+            <a href="https://wa.me/message/CMENL4DSR3OIH1"><FaWhatsapp /></a>
         </li>
         <li>
-            <a href="https://linkedin.com/"><FaLinkedin /></a>
+            <a href="https://www.linkedin.com/in/bala-mathias-285b90274/"><FaLinkedin /></a>
         </li>
         <li>
-            <a href="https://instagram.com/"><FaInstagram /></a>
+            <a href="https://www.instagram.com/matie_01_/"><FaInstagram /></a>
         </li>
       </ul>
     </div>

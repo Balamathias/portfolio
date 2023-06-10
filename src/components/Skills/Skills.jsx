@@ -54,7 +54,7 @@ const Skills = () => {
                 </li>
                 <li className='django'>
                     <FaServer/>
-                    <span>Django and Django restfamework</span>
+                    <span>Django and Django restframework</span>
                 </li>
             </ul>
         </div>
