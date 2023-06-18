@@ -2,7 +2,7 @@
     height: 100%;
     width: 100%;
     overflow: auto;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
 }
 
 .tools {
@@ -70,10 +70,16 @@
 
 .projects {
     display: flex;
-    flex-direction: column;
     gap: 1rem;
     padding: 25px 0;
     margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width:600px) {
+    .projects {
+        flex-direction: column;
+    }
 }
 
 .project {

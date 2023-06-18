@@ -2,13 +2,16 @@ import { useEffect, useState } from 'react';
 import './Contact.css'
 import { useSpring, animated, config } from 'react-spring';
 import Loader from '../Loader/Loader';
-import { FaCheck } from 'react-icons/fa';
+import { FaCheck, FaTimes } from 'react-icons/fa';
 // import MapComponent from '../Map/MapComponent';
 
 const Contact = () => {
   
   const [loader, setLoader] = useState(true)
-  const [message, setMessage] = useState('null')
+  const [message, setMessage] = useState({
+    message: '',
+    code: ''
+  })
   const [showModal, setShowModal] = useState(false);
 
   const introAnimation = useSpring({
@@ -39,7 +42,7 @@ const Contact = () => {
   const submitMessage = (e) => {
     e.preventDefault();
     const url = 'https://abulaw-production.up.railway.app/api/server/mail';
-    fetch(url, {
+    fetch('http://127.0.0.1:8000/api/server/mail', {
       method: 'POST',
       body: JSON.stringify(formData),
       headers: {
@@ -48,7 +51,10 @@ const Contact = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setMessage(data.message);
+        setMessage({
+          message:data.message,
+          code:data.code
+        });
         setShowModal(true);
         setFormData({
           fname: '',
@@ -88,7 +94,7 @@ const Contact = () => {
             <span className="close" onClick={() => setShowModal(false)}>
               &times;
             </span>
-            <p className='message'>{message ? message : ''} <FaCheck color='green' /></p>
+            <p className='message'>{message.message ? message.message : ''} {message.code ==200 ? <FaCheck color='green' />: <FaTimes color='red' />}</p>
           </div>
         </div>
       )}

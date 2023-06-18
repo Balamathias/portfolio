@@ -4,6 +4,7 @@ import { useSpring, config, animated } from 'react-spring';
 import Loader from '../Loader/Loader';
 import { FaDatabase, FaEdit, FaGit, FaJs, FaPython, FaReact, FaServer } from 'react-icons/fa';
 import courseImage from '../../assets/images/literature1.jpg'
+import blogSiteImage from '../../assets/images/image1.jpg'
 
 
 const Skills = () => {
@@ -58,12 +59,19 @@ const Skills = () => {
                 </li>
             </ul>
         </div>
-        <div className="projects">
+        <div className="projects-container">
             <h2>My projects.</h2>
-            <div className="project" >
-                <img src={courseImage} alt="Course Website Image" />
-                <p>A Full Stack Course Study Website with HTML5, CSS3, Python:Django.</p>
-                <a href="https://abulaw-production.up.railway.app/">Visit Site <FaEdit /></a>
+            <div className='projects'>
+                <div className="project" >
+                    <img src={blogSiteImage} alt="Blog Site Image" />
+                    <p>A Full Stack Blog Website with Django and Django rest framework for the backend and APIs, with Reactjs frontend.</p>
+                    <a href="https://blog-matie.netlify.app">Visit Site <FaEdit /></a>
+                </div>
+                <div className="project" >
+                    <img src={courseImage} alt="Course Website Image" />
+                    <p>A Full Stack Course Study Website with HTML5, CSS3, Python:Django.</p>
+                    <a href="https://abulaw-production.up.railway.app/">Visit Site <FaEdit /></a>
+                </div>
             </div>
         </div>
     </div>
